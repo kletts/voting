@@ -1,0 +1,119 @@
+---
+title: "Preferential Voting 2022"
+author: "Christian Klettner"
+format: html
+execute: 
+  echo: false
+  message: false 
+  warning: false
+---
+
+Data source: [AEC](https://results.aec.gov.au/)
+
+# Overall preference distributions 
+
+```{r}
+source("R/pref.R")
+data <- read_csv("data/prefflows2022.csv")
+gt_party_pref(data)
+```
+
+# Seat by seat preference distributions 
+
+```{ojs}
+import {Plot} from "@mkfreeman/plot-tooltip";
+import {addTooltips} from "@mkfreeman/plot-tooltip";
+import {aq, dt, op} from "@uwdata/arquero"
+```
+
+```{ojs}
+data = aq.fromCSV(await FileAttachment('data/prefflows2022.csv').text())
+```
+
+```{ojs}
+make_pptable = function(data, division) {  
+  if (division===null) { 
+    var division = data.slice(0,1).get('DivisionNm'); 
+  } else { 
+    var division = division["DivisionNm"]; 
+  }
+  var dataf = data.params({sdivision: division}).
+      filter((d,$)=> d.DivisionNm === $.sdivision).
+      derive({ PrefFlow: d=> d.PrefFlow/op.sum(d.PrefFlow) })
+  var datapp = dataf.groupby('PartyAb').
+    rollup({PrefFlow: d => op.sum(d.PrefFlow) }).
+    derive({ FromPartyAb: d =>  "TwoPP" })
+  var datafinal = dataf.select('PartyAb', 'FromPartyAb', 'PrefFlow').
+    concat(datapp)
+  return datafinal; 
+}
+```
+
+```{ojs}
+aq.addFunction("pcf", d3.format(".02%"))
+```
+
+```{ojs}
+recodestate = ({"New South Wales": "NSW", 
+               "Victoria": "VIC", 
+               "Queensland": "QLD", 
+               "South Australia": "SA", 
+               "Western Australia": "WA", 
+               "Tasmania": "TAS", 
+               "Northern Territory": "NT", 
+               "Australian Capital Territory": "ACT"}) 
+```
+
+```{ojs}
+viewof stateselect = Inputs.select(Object.keys(recodestate), 
+    {value: "NSW", label: "State/Territory", multiple: false })
+```
+
+Select a division/electorate:
+
+```{ojs}
+viewof divisionselect = Inputs.table(Object(data.params({sstate: recodestate[stateselect] }).
+      filter((d,$) => d.StateAb === $.sstate).
+      groupby('StateAb', 'DivisionNm').
+      rollup({ Candidates: d => op.distinct(d.CandidateId) }).
+      orderby('StateAb','DivisionNm')), { multiple: false, value: d => d[1] }); 
+```
+
+```{ojs}
+label_division = function(divisionselect, data, stateselect) { 
+  if (divisionselect === null) { 
+    return data.
+      params({ ss: stateselect }).
+      filter((d,$) => d.StateAb === $.ss).
+      slice(0,1).get('DivisionNm')
+  } else { 
+    return divisionselect["DivisionNm"];
+  }}
+```
+
+
+```{ojs}
+md`Preference count for the division of **${label_division(divisionselect, data, recodestate[stateselect])}**`; 
+```
+
+```{ojs}
+Plot.plot({
+  color: { legend: true },
+  y: { tickFormat: d => d3.format(".1%")(d) },
+  marks: [ Plot.frame(), 
+    Plot.ruleY([0]),
+    Plot.barY(make_pptable(data, divisionselect).filter( d => d.FromPartyAb != "TwoPP" ),
+                  {x: 'PartyAb', y: 'PrefFlow', fill: 'FromPartyAb' }), 
+    Plot.barY(make_pptable(data, divisionselect).filter( d => d.FromPartyAb != "TwoPP" ),
+                  {x: 'PartyAb', y: d => d.PrefFlow*1.1, fill: null }) 
+  ]})
+```
+
+
+```{ojs}
+make_pptable(data, divisionselect).groupby('PartyAb').
+    derive({ PrefFlow: d => d.PrefFlow===0 ? ".." : aq.pcf(d.PrefFlow) }).
+    pivot('FromPartyAb', 'PrefFlow', { sort: false}).
+    relocate('FirstPref', { after: 'PartyAb'}).view()
+```
+

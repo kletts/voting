@@ -1,6 +1,7 @@
 library(tidyverse)
 library(tsibble)
 library(gt)
+library(gtExtras)
 
 
 # functions -----
@@ -30,7 +31,7 @@ summ_pref_flow <- function(data) {
                by="PartyAb") } 
 
 gt_stack_party <- function(gt, ab, nm) {
-  data_in <- gt_index(gt, column = {{ nm }})
+  data_in <- gtExtras::gt_index(gt, column = {{ nm }})
   gt <- text_transform(
     data=gt, 
     locations=cells_stub(), 
@@ -127,23 +128,7 @@ gt_party_pref <- function(data, year="2022") {
 
 # summ_pref_flow(data) %>% summ_twopp() ----
 
-setwd("~/Documents/AECMAPS/2022-election/") 
-folder <- paste("HouseDopByPPDownload-27966", c("NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"), sep="-")
-data <- map_dfr(folder, read_folder) %>% 
-  nest_by(DivisionNm) %>% 
-  rowwise() %>% 
-  mutate(data=list(summ_pref_flow(data))) %>% 
-  unnest(data)  
+calc_diversity <- function(data) { 
+  
+  } 
 
-gt_party_pref(data, "2022")
-
-setwd("~/Documents/AECMAPS/2019-election/") 
-folder <- paste("HouseDopByPPDownload-24310", c("NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"), sep="-")
-data <- map_dfr(folder, read_folder) %>% 
-  nest_by(DivisionNm) %>% 
-  rowwise() %>% 
-  mutate(data=list(summ_pref_flow(data))) %>% 
-  unnest(data) 
-
-t1 <- gt_party_pref(data, "2019")
-gtsave(t1, "prefflows2019.html")

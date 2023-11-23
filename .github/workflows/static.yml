@@ -1,0 +1,22 @@
+name: Deploy static content to Pages
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+  concurrency:
+    group: "pages"
+    cancel-in-progress: false
+  jobs:
+    publish: 
+      runs-on: ubuntu-latest
+      steps:
+        - name: move 
+          run: |
+            mkdir docs
+            cp -r PrefFlow2022_files docs
+            cp PrefFlow2022.html docs

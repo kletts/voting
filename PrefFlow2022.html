@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Christian Klettner">
+
+<title>Preferential Voting 2022</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="PrefFlow2022_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PrefFlow2022_files/libs/quarto-html/quarto.js"></script>
+<script src="PrefFlow2022_files/libs/quarto-html/popper.min.js"></script>
+<script src="PrefFlow2022_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PrefFlow2022_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PrefFlow2022_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PrefFlow2022_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PrefFlow2022_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PrefFlow2022_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PrefFlow2022_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script type="module" src="PrefFlow2022_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="PrefFlow2022_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Preferential Voting 2022</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Christian Klettner </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Data source: <a href="https://results.aec.gov.au/">AEC</a></p>
+<section id="overall-preference-distributions" class="level1">
+<h1>Overall preference distributions</h1>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="szwbybhqxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#szwbybhqxt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#szwbybhqxt thead, #szwbybhqxt tbody, #szwbybhqxt tfoot, #szwbybhqxt tr, #szwbybhqxt td, #szwbybhqxt th {
+  border-style: none;
+}
+
+#szwbybhqxt p {
+  margin: 0;
+  padding: 0;
+}
+
+#szwbybhqxt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#szwbybhqxt .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#szwbybhqxt .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#szwbybhqxt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#szwbybhqxt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#szwbybhqxt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#szwbybhqxt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#szwbybhqxt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#szwbybhqxt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#szwbybhqxt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#szwbybhqxt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#szwbybhqxt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#szwbybhqxt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#szwbybhqxt .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#szwbybhqxt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#szwbybhqxt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#szwbybhqxt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#szwbybhqxt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#szwbybhqxt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#szwbybhqxt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#szwbybhqxt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#szwbybhqxt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#szwbybhqxt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#szwbybhqxt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#szwbybhqxt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#szwbybhqxt .gt_left {
+  text-align: left;
+}
+
+#szwbybhqxt .gt_center {
+  text-align: center;
+}
+
+#szwbybhqxt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#szwbybhqxt .gt_font_normal {
+  font-weight: normal;
+}
+
+#szwbybhqxt .gt_font_bold {
+  font-weight: bold;
+}
+
+#szwbybhqxt .gt_font_italic {
+  font-style: italic;
+}
+
+#szwbybhqxt .gt_super {
+  font-size: 65%;
+}
+
+#szwbybhqxt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#szwbybhqxt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#szwbybhqxt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#szwbybhqxt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#szwbybhqxt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#szwbybhqxt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#szwbybhqxt .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="12" class="gt_heading gt_title gt_font_normal" style="">Australian 2022 General Election Lower House Preference Flows</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="12" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Preference flows from political party candidates 
+               to the top ten party preference recipients. Excludes preferences flowing 
+               from and to all independent and non-aligned candidates.</td>
+    </tr>
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id="Preferences from:">Preferences from:</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="11" scope="colgroup" id="Preference flow to:">
+        <span class="gt_column_spanner">Preference flow to:</span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ALP">ALP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="LP">LP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ON">ON</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="LNP">LNP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="GRN">GRN</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="UAPP">UAPP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="NP">NP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="GVIC">GVIC</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="LDP">LDP</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="XEN">XEN</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Other">Other</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">AJP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Animal Justice Party</span></div></th>
+<td headers="stub_1_1 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">18.1%</td>
+<td headers="stub_1_1 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.6%</td>
+<td headers="stub_1_1 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">11.1%</td>
+<td headers="stub_1_1 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.3%</td>
+<td headers="stub_1_1 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">26.5%</td>
+<td headers="stub_1_1 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">10.0%</td>
+<td headers="stub_1_1 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.3%</td>
+<td headers="stub_1_1 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">12.8%</td>
+<td headers="stub_1_1 LDP" class="gt_row gt_right">1.9%</td>
+<td headers="stub_1_1 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.5%</td>
+<td headers="stub_1_1 Other" class="gt_row gt_right">6.8%</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">ALP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Labor Party </span></div></th>
+<td headers="stub_1_2 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">-</td>
+<td headers="stub_1_2 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">22.0%</td>
+<td headers="stub_1_2 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_2 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">14.1%</td>
+<td headers="stub_1_2 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">36.5%</td>
+<td headers="stub_1_2 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_2 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">7.9%</td>
+<td headers="stub_1_2 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_2 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_2 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">12.2%</td>
+<td headers="stub_1_2 Other" class="gt_row gt_right">7.3%</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">ASP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Shooters, Fishers and Farmers Party</span></div></th>
+<td headers="stub_1_3 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">18.0%</td>
+<td headers="stub_1_3 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">11.9%</td>
+<td headers="stub_1_3 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">37.0%</td>
+<td headers="stub_1_3 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">4.6%</td>
+<td headers="stub_1_3 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">6.6%</td>
+<td headers="stub_1_3 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">5.2%</td>
+<td headers="stub_1_3 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">11.5%</td>
+<td headers="stub_1_3 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_3 LDP" class="gt_row gt_right">5.2%</td>
+<td headers="stub_1_3 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_3 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">AUC</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Christians</span></div></th>
+<td headers="stub_1_4 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">10.8%</td>
+<td headers="stub_1_4 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">44.2%</td>
+<td headers="stub_1_4 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">22.3%</td>
+<td headers="stub_1_4 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_4 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">7.3%</td>
+<td headers="stub_1_4 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">7.5%</td>
+<td headers="stub_1_4 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_4 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_4 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_4 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_4 Other" class="gt_row gt_right">7.9%</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">AUD</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Democrats</span></div></th>
+<td headers="stub_1_5 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">27.8%</td>
+<td headers="stub_1_5 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">12.4%</td>
+<td headers="stub_1_5 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">3.1%</td>
+<td headers="stub_1_5 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_5 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">18.7%</td>
+<td headers="stub_1_5 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">8.3%</td>
+<td headers="stub_1_5 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_5 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_5 LDP" class="gt_row gt_right">9.9%</td>
+<td headers="stub_1_5 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_5 Other" class="gt_row gt_right">19.8%</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">AUP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Progressives</span></div></th>
+<td headers="stub_1_6 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">12.8%</td>
+<td headers="stub_1_6 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.0%</td>
+<td headers="stub_1_6 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">6.3%</td>
+<td headers="stub_1_6 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.7%</td>
+<td headers="stub_1_6 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">35.6%</td>
+<td headers="stub_1_6 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">8.3%</td>
+<td headers="stub_1_6 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_6 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_6 LDP" class="gt_row gt_right">6.9%</td>
+<td headers="stub_1_6 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_6 Other" class="gt_row gt_right">23.3%</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">AUVA</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Values Party</span></div></th>
+<td headers="stub_1_7 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">11.8%</td>
+<td headers="stub_1_7 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.5%</td>
+<td headers="stub_1_7 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">26.5%</td>
+<td headers="stub_1_7 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">15.2%</td>
+<td headers="stub_1_7 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">14.4%</td>
+<td headers="stub_1_7 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">15.5%</td>
+<td headers="stub_1_7 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_7 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">0.5%</td>
+<td headers="stub_1_7 LDP" class="gt_row gt_right">3.3%</td>
+<td headers="stub_1_7 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_7 Other" class="gt_row gt_right">12.2%</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">CEC</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Citizens Party</span></div></th>
+<td headers="stub_1_8 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">18.7%</td>
+<td headers="stub_1_8 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.0%</td>
+<td headers="stub_1_8 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">13.6%</td>
+<td headers="stub_1_8 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_8 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">15.6%</td>
+<td headers="stub_1_8 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">16.8%</td>
+<td headers="stub_1_8 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.8%</td>
+<td headers="stub_1_8 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">4.0%</td>
+<td headers="stub_1_8 LDP" class="gt_row gt_right">5.7%</td>
+<td headers="stub_1_8 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_8 Other" class="gt_row gt_right">13.7%</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">CYA</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Federation Party</span></div></th>
+<td headers="stub_1_9 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">12.0%</td>
+<td headers="stub_1_9 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.9%</td>
+<td headers="stub_1_9 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">24.3%</td>
+<td headers="stub_1_9 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.6%</td>
+<td headers="stub_1_9 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">6.7%</td>
+<td headers="stub_1_9 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">15.8%</td>
+<td headers="stub_1_9 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.4%</td>
+<td headers="stub_1_9 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">3.6%</td>
+<td headers="stub_1_9 LDP" class="gt_row gt_right">8.7%</td>
+<td headers="stub_1_9 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.2%</td>
+<td headers="stub_1_9 Other" class="gt_row gt_right">17.9%</td></tr>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">DHJP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Derryn Hinch's Justice Party</span></div></th>
+<td headers="stub_1_10 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">13.6%</td>
+<td headers="stub_1_10 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">17.3%</td>
+<td headers="stub_1_10 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">21.3%</td>
+<td headers="stub_1_10 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_10 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_10 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">12.4%</td>
+<td headers="stub_1_10 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.0%</td>
+<td headers="stub_1_10 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">11.9%</td>
+<td headers="stub_1_10 LDP" class="gt_row gt_right">7.1%</td>
+<td headers="stub_1_10 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_10 Other" class="gt_row gt_right">15.4%</td></tr>
+    <tr><th id="stub_1_11" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">DPDA</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Drew Pavlou Democratic Alliance</span></div></th>
+<td headers="stub_1_11 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">23.0%</td>
+<td headers="stub_1_11 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">20.2%</td>
+<td headers="stub_1_11 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">4.9%</td>
+<td headers="stub_1_11 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_11 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">24.4%</td>
+<td headers="stub_1_11 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">6.6%</td>
+<td headers="stub_1_11 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_11 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_11 LDP" class="gt_row gt_right">7.6%</td>
+<td headers="stub_1_11 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_11 Other" class="gt_row gt_right">13.3%</td></tr>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">GAP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">The Great Australian Party</span></div></th>
+<td headers="stub_1_12 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">11.2%</td>
+<td headers="stub_1_12 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">7.1%</td>
+<td headers="stub_1_12 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">43.8%</td>
+<td headers="stub_1_12 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.5%</td>
+<td headers="stub_1_12 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">9.7%</td>
+<td headers="stub_1_12 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">12.9%</td>
+<td headers="stub_1_12 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.0%</td>
+<td headers="stub_1_12 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">0.8%</td>
+<td headers="stub_1_12 LDP" class="gt_row gt_right">0.7%</td>
+<td headers="stub_1_12 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_12 Other" class="gt_row gt_right">11.3%</td></tr>
+    <tr><th id="stub_1_13" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">GRN</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Australian Greens</span></div></th>
+<td headers="stub_1_13 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">75.8%</td>
+<td headers="stub_1_13 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">12.2%</td>
+<td headers="stub_1_13 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">2.9%</td>
+<td headers="stub_1_13 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">5.6%</td>
+<td headers="stub_1_13 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_13 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">0.4%</td>
+<td headers="stub_1_13 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.3%</td>
+<td headers="stub_1_13 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_13 LDP" class="gt_row gt_right">0.1%</td>
+<td headers="stub_1_13 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.5%</td>
+<td headers="stub_1_13 Other" class="gt_row gt_right">1.1%</td></tr>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">GVIC</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">The Australian Greens - Victoria</span></div></th>
+<td headers="stub_1_14 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">79.5%</td>
+<td headers="stub_1_14 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">16.8%</td>
+<td headers="stub_1_14 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.4%</td>
+<td headers="stub_1_14 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_14 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_14 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">2.7%</td>
+<td headers="stub_1_14 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.6%</td>
+<td headers="stub_1_14 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_14 LDP" class="gt_row gt_right">0.0%</td>
+<td headers="stub_1_14 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_14 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_15" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">HMP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Legalise Cannabis Australia</span></div></th>
+<td headers="stub_1_15 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">21.1%</td>
+<td headers="stub_1_15 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_15 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">31.8%</td>
+<td headers="stub_1_15 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">12.8%</td>
+<td headers="stub_1_15 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">34.2%</td>
+<td headers="stub_1_15 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_15 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_15 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_15 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_15 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_15 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_16" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">IAP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Indigenous - Aboriginal Party of Australia</span></div></th>
+<td headers="stub_1_16 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">31.8%</td>
+<td headers="stub_1_16 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.2%</td>
+<td headers="stub_1_16 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">17.4%</td>
+<td headers="stub_1_16 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_16 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">7.9%</td>
+<td headers="stub_1_16 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">2.1%</td>
+<td headers="stub_1_16 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">17.3%</td>
+<td headers="stub_1_16 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_16 LDP" class="gt_row gt_right">18.4%</td>
+<td headers="stub_1_16 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_16 Other" class="gt_row gt_right">3.9%</td></tr>
+    <tr><th id="stub_1_17" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">IMO</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Informed Medical Options Party</span></div></th>
+<td headers="stub_1_17 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">10.2%</td>
+<td headers="stub_1_17 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">4.2%</td>
+<td headers="stub_1_17 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">28.3%</td>
+<td headers="stub_1_17 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.6%</td>
+<td headers="stub_1_17 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">14.5%</td>
+<td headers="stub_1_17 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">21.3%</td>
+<td headers="stub_1_17 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.0%</td>
+<td headers="stub_1_17 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_17 LDP" class="gt_row gt_right">4.2%</td>
+<td headers="stub_1_17 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_17 Other" class="gt_row gt_right">12.7%</td></tr>
+    <tr><th id="stub_1_18" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">JLN</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Jacqui Lambie Network</span></div></th>
+<td headers="stub_1_18 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">52.3%</td>
+<td headers="stub_1_18 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">37.5%</td>
+<td headers="stub_1_18 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_18 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_18 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">10.3%</td>
+<td headers="stub_1_18 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_18 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_18 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_18 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_18 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_18 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_19" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">KAP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Katter's Australian Party </span></div></th>
+<td headers="stub_1_19 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">26.5%</td>
+<td headers="stub_1_19 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_19 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">23.7%</td>
+<td headers="stub_1_19 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">43.7%</td>
+<td headers="stub_1_19 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">6.0%</td>
+<td headers="stub_1_19 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_19 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_19 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_19 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_19 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_19 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_20" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">LDP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Liberal Democratic Party</span></div></th>
+<td headers="stub_1_20 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">13.6%</td>
+<td headers="stub_1_20 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">23.2%</td>
+<td headers="stub_1_20 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">16.7%</td>
+<td headers="stub_1_20 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">4.1%</td>
+<td headers="stub_1_20 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">5.5%</td>
+<td headers="stub_1_20 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">19.8%</td>
+<td headers="stub_1_20 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">9.9%</td>
+<td headers="stub_1_20 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">3.0%</td>
+<td headers="stub_1_20 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_20 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.1%</td>
+<td headers="stub_1_20 Other" class="gt_row gt_right">4.0%</td></tr>
+    <tr><th id="stub_1_21" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">LP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Liberal Party of Australia </span></div></th>
+<td headers="stub_1_21 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">59.9%</td>
+<td headers="stub_1_21 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_21 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_21 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_21 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">16.9%</td>
+<td headers="stub_1_21 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_21 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">11.6%</td>
+<td headers="stub_1_21 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">11.6%</td>
+<td headers="stub_1_21 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_21 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_21 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_22" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">NP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">National Party of Australia  Inc.</span></div></th>
+<td headers="stub_1_22 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">27.2%</td>
+<td headers="stub_1_22 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">65.6%</td>
+<td headers="stub_1_22 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">5.7%</td>
+<td headers="stub_1_22 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_22 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">0.7%</td>
+<td headers="stub_1_22 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">0.8%</td>
+<td headers="stub_1_22 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_22 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_22 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_22 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_22 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_23" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">ON</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Pauline Hanson's One Nation</span></div></th>
+<td headers="stub_1_23 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">25.0%</td>
+<td headers="stub_1_23 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">21.6%</td>
+<td headers="stub_1_23 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_23 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">19.4%</td>
+<td headers="stub_1_23 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">10.6%</td>
+<td headers="stub_1_23 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">10.6%</td>
+<td headers="stub_1_23 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.2%</td>
+<td headers="stub_1_23 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">1.5%</td>
+<td headers="stub_1_23 LDP" class="gt_row gt_right">1.3%</td>
+<td headers="stub_1_23 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.3%</td>
+<td headers="stub_1_23 Other" class="gt_row gt_right">1.6%</td></tr>
+    <tr><th id="stub_1_24" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">REAS</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Reason Australia</span></div></th>
+<td headers="stub_1_24 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">23.2%</td>
+<td headers="stub_1_24 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">9.2%</td>
+<td headers="stub_1_24 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_24 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_24 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_24 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">6.1%</td>
+<td headers="stub_1_24 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_24 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">53.8%</td>
+<td headers="stub_1_24 LDP" class="gt_row gt_right">7.7%</td>
+<td headers="stub_1_24 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_24 Other" class="gt_row gt_right">-</td></tr>
+    <tr><th id="stub_1_25" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">SAL</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Socialist Alliance</span></div></th>
+<td headers="stub_1_25 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">18.4%</td>
+<td headers="stub_1_25 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">7.1%</td>
+<td headers="stub_1_25 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">4.3%</td>
+<td headers="stub_1_25 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.1%</td>
+<td headers="stub_1_25 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">19.2%</td>
+<td headers="stub_1_25 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">4.8%</td>
+<td headers="stub_1_25 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_25 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">31.1%</td>
+<td headers="stub_1_25 LDP" class="gt_row gt_right">0.9%</td>
+<td headers="stub_1_25 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_25 Other" class="gt_row gt_right">6.1%</td></tr>
+    <tr><th id="stub_1_26" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">SOPA</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">FUSION: Science, Pirate, Secular, Climate Emergency</span></div></th>
+<td headers="stub_1_26 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">17.9%</td>
+<td headers="stub_1_26 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.8%</td>
+<td headers="stub_1_26 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">5.0%</td>
+<td headers="stub_1_26 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.4%</td>
+<td headers="stub_1_26 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">41.5%</td>
+<td headers="stub_1_26 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">10.9%</td>
+<td headers="stub_1_26 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.3%</td>
+<td headers="stub_1_26 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">6.2%</td>
+<td headers="stub_1_26 LDP" class="gt_row gt_right">1.1%</td>
+<td headers="stub_1_26 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_26 Other" class="gt_row gt_right">8.1%</td></tr>
+    <tr><th id="stub_1_27" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">SPP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Sustainable Australia Party - Stop Overdevelopment / Corruption</span></div></th>
+<td headers="stub_1_27 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">20.4%</td>
+<td headers="stub_1_27 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">9.3%</td>
+<td headers="stub_1_27 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">12.2%</td>
+<td headers="stub_1_27 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_27 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">25.7%</td>
+<td headers="stub_1_27 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">8.0%</td>
+<td headers="stub_1_27 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_27 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">2.3%</td>
+<td headers="stub_1_27 LDP" class="gt_row gt_right">20.6%</td>
+<td headers="stub_1_27 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_27 Other" class="gt_row gt_right">1.6%</td></tr>
+    <tr><th id="stub_1_28" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">TLOC</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">The Local Party of Australia</span></div></th>
+<td headers="stub_1_28 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">28.7%</td>
+<td headers="stub_1_28 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">12.3%</td>
+<td headers="stub_1_28 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.7%</td>
+<td headers="stub_1_28 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_28 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">29.7%</td>
+<td headers="stub_1_28 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">0.8%</td>
+<td headers="stub_1_28 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_28 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_28 LDP" class="gt_row gt_right">0.3%</td>
+<td headers="stub_1_28 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_28 Other" class="gt_row gt_right">27.4%</td></tr>
+    <tr><th id="stub_1_29" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">TNL</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">TNL</span></div></th>
+<td headers="stub_1_29 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">20.8%</td>
+<td headers="stub_1_29 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">8.9%</td>
+<td headers="stub_1_29 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">13.0%</td>
+<td headers="stub_1_29 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">5.9%</td>
+<td headers="stub_1_29 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">17.8%</td>
+<td headers="stub_1_29 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">8.6%</td>
+<td headers="stub_1_29 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.5%</td>
+<td headers="stub_1_29 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">11.8%</td>
+<td headers="stub_1_29 LDP" class="gt_row gt_right">4.9%</td>
+<td headers="stub_1_29 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_29 Other" class="gt_row gt_right">7.9%</td></tr>
+    <tr><th id="stub_1_30" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">UAPP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">United Australia Party</span></div></th>
+<td headers="stub_1_30 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">20.5%</td>
+<td headers="stub_1_30 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">31.1%</td>
+<td headers="stub_1_30 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">27.5%</td>
+<td headers="stub_1_30 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">3.8%</td>
+<td headers="stub_1_30 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">7.3%</td>
+<td headers="stub_1_30 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">-</td>
+<td headers="stub_1_30 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">1.5%</td>
+<td headers="stub_1_30 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">4.6%</td>
+<td headers="stub_1_30 LDP" class="gt_row gt_right">1.4%</td>
+<td headers="stub_1_30 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">0.1%</td>
+<td headers="stub_1_30 Other" class="gt_row gt_right">2.1%</td></tr>
+    <tr><th id="stub_1_31" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">VNS</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">Victorian Socialists</span></div></th>
+<td headers="stub_1_31 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">16.0%</td>
+<td headers="stub_1_31 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">7.6%</td>
+<td headers="stub_1_31 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">3.0%</td>
+<td headers="stub_1_31 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_31 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_31 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">10.0%</td>
+<td headers="stub_1_31 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_31 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">56.2%</td>
+<td headers="stub_1_31 LDP" class="gt_row gt_right">0.9%</td>
+<td headers="stub_1_31 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_31 Other" class="gt_row gt_right">6.4%</td></tr>
+    <tr><th id="stub_1_32" scope="row" class="gt_row gt_left gt_stub"><div style="line-height:1;"><span style="font-weight:bold;color:black;">WAP</span></div>
+<div style="line-height:0.8;"><span style="color:gray;font-size:10px;">WESTERN AUSTRALIA PARTY</span></div></th>
+<td headers="stub_1_32 ALP" class="gt_row gt_right" style="background-color: rgba(235,64,52,0.2);">23.1%</td>
+<td headers="stub_1_32 LP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">20.1%</td>
+<td headers="stub_1_32 ON" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">20.8%</td>
+<td headers="stub_1_32 LNP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">-</td>
+<td headers="stub_1_32 GRN" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">18.9%</td>
+<td headers="stub_1_32 UAPP" class="gt_row gt_right" style="background-color: rgba(255,255,0,0.2);">6.9%</td>
+<td headers="stub_1_32 NP" class="gt_row gt_right" style="background-color: rgba(0,0,255,0.2);">0.8%</td>
+<td headers="stub_1_32 GVIC" class="gt_row gt_right" style="background-color: rgba(0,204,0,0.2);">-</td>
+<td headers="stub_1_32 LDP" class="gt_row gt_right">-</td>
+<td headers="stub_1_32 XEN" class="gt_row gt_right" style="background-color: rgba(255,153,51,0.2);">-</td>
+<td headers="stub_1_32 Other" class="gt_row gt_right">9.2%</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="seat-by-seat-preference-distributions" class="level1">
+<h1>Seat by seat preference distributions</h1>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="24" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 23;"><span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {Plot} <span class="im">from</span> <span class="st">"@mkfreeman/plot-tooltip"</span><span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {addTooltips} <span class="im">from</span> <span class="st">"@mkfreeman/plot-tooltip"</span><span class="op">;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {aq<span class="op">,</span> dt<span class="op">,</span> op} <span class="im">from</span> <span class="st">"@uwdata/arquero"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="29" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 28;"><span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> aq<span class="op">.</span><span class="fu">fromCSV</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'data/prefflows2022.csv'</span>)<span class="op">.</span><span class="fu">text</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="33" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 32;"><span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>make_pptable <span class="op">=</span> <span class="kw">function</span>(data<span class="op">,</span> division) {  </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (division<span class="op">===</span><span class="kw">null</span>) { </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> division <span class="op">=</span> data<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">1</span>)<span class="op">.</span><span class="fu">get</span>(<span class="st">'DivisionNm'</span>)<span class="op">;</span> </span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> { </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> division <span class="op">=</span> division[<span class="st">"DivisionNm"</span>]<span class="op">;</span> </span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> dataf <span class="op">=</span> data<span class="op">.</span><span class="fu">params</span>({<span class="dt">sdivision</span><span class="op">:</span> division})<span class="op">.</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>((d<span class="op">,</span>$)<span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">DivisionNm</span> <span class="op">===</span> $<span class="op">.</span><span class="at">sdivision</span>)<span class="op">.</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">derive</span>({ <span class="dt">PrefFlow</span><span class="op">:</span> d<span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">PrefFlow</span><span class="op">/</span>op<span class="op">.</span><span class="fu">sum</span>(d<span class="op">.</span><span class="at">PrefFlow</span>) })</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> datapp <span class="op">=</span> dataf<span class="op">.</span><span class="fu">groupby</span>(<span class="st">'PartyAb'</span>)<span class="op">.</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rollup</span>({<span class="dt">PrefFlow</span><span class="op">:</span> d <span class="kw">=&gt;</span> op<span class="op">.</span><span class="fu">sum</span>(d<span class="op">.</span><span class="at">PrefFlow</span>) })<span class="op">.</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">derive</span>({ <span class="dt">FromPartyAb</span><span class="op">:</span> d <span class="kw">=&gt;</span>  <span class="st">"TwoPP"</span> })</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> datafinal <span class="op">=</span> dataf<span class="op">.</span><span class="fu">select</span>(<span class="st">'PartyAb'</span><span class="op">,</span> <span class="st">'FromPartyAb'</span><span class="op">,</span> <span class="st">'PrefFlow'</span>)<span class="op">.</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">concat</span>(datapp)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> datafinal<span class="op">;</span> </span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="52" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 51;"><span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>aq<span class="op">.</span><span class="fu">addFunction</span>(<span class="st">"pcf"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".02%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="56" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 55;"><span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>recodestate <span class="op">=</span> ({<span class="st">"New South Wales"</span><span class="op">:</span> <span class="st">"NSW"</span><span class="op">,</span> </span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Victoria"</span><span class="op">:</span> <span class="st">"VIC"</span><span class="op">,</span> </span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Queensland"</span><span class="op">:</span> <span class="st">"QLD"</span><span class="op">,</span> </span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>               <span class="st">"South Australia"</span><span class="op">:</span> <span class="st">"SA"</span><span class="op">,</span> </span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Western Australia"</span><span class="op">:</span> <span class="st">"WA"</span><span class="op">,</span> </span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Tasmania"</span><span class="op">:</span> <span class="st">"TAS"</span><span class="op">,</span> </span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Northern Territory"</span><span class="op">:</span> <span class="st">"NT"</span><span class="op">,</span> </span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Australian Capital Territory"</span><span class="op">:</span> <span class="st">"ACT"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="67" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>viewof stateselect <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(<span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(recodestate)<span class="op">,</span> </span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">value</span><span class="op">:</span> <span class="st">"NSW"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"State/Territory"</span><span class="op">,</span> <span class="dt">multiple</span><span class="op">:</span> <span class="kw">false</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p>Select a division/electorate:</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="74" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>viewof divisionselect <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">table</span>(<span class="bu">Object</span>(data<span class="op">.</span><span class="fu">params</span>({<span class="dt">sstate</span><span class="op">:</span> recodestate[stateselect] })<span class="op">.</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>((d<span class="op">,</span>$) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">StateAb</span> <span class="op">===</span> $<span class="op">.</span><span class="at">sstate</span>)<span class="op">.</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>      <span class="fu">groupby</span>(<span class="st">'StateAb'</span><span class="op">,</span> <span class="st">'DivisionNm'</span>)<span class="op">.</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rollup</span>({ <span class="dt">Candidates</span><span class="op">:</span> d <span class="kw">=&gt;</span> op<span class="op">.</span><span class="fu">distinct</span>(d<span class="op">.</span><span class="at">CandidateId</span>) })<span class="op">.</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>      <span class="fu">orderby</span>(<span class="st">'StateAb'</span><span class="op">,</span><span class="st">'DivisionNm'</span>))<span class="op">,</span> { <span class="dt">multiple</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> d <span class="kw">=&gt;</span> d[<span class="dv">1</span>] })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="82" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>label_division <span class="op">=</span> <span class="kw">function</span>(divisionselect<span class="op">,</span> data<span class="op">,</span> stateselect) { </span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (divisionselect <span class="op">===</span> <span class="kw">null</span>) { </span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data<span class="op">.</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>      <span class="fu">params</span>({ <span class="dt">ss</span><span class="op">:</span> stateselect })<span class="op">.</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>((d<span class="op">,</span>$) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">StateAb</span> <span class="op">===</span> $<span class="op">.</span><span class="at">ss</span>)<span class="op">.</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>      <span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">1</span>)<span class="op">.</span><span class="fu">get</span>(<span class="st">'DivisionNm'</span>)</span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> { </span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> divisionselect[<span class="st">"DivisionNm"</span>]<span class="op">;</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>  }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="95" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 94;"><span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="fu">md</span><span class="vs">`Preference count for the division of **</span><span class="sc">${</span><span class="fu">label_division</span>(divisionselect<span class="op">,</span> data<span class="op">,</span> recodestate[stateselect])<span class="sc">}</span><span class="vs">**`</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-9" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="99" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> { <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".1%"</span>)(d) }<span class="op">,</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [ Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span> </span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(<span class="fu">make_pptable</span>(data<span class="op">,</span> divisionselect)<span class="op">.</span><span class="fu">filter</span>( d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">FromPartyAb</span> <span class="op">!=</span> <span class="st">"TwoPP"</span> )<span class="op">,</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>                  {<span class="dt">x</span><span class="op">:</span> <span class="st">'PartyAb'</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">'PrefFlow'</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">'FromPartyAb'</span> })<span class="op">,</span> </span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(<span class="fu">make_pptable</span>(data<span class="op">,</span> divisionselect)<span class="op">.</span><span class="fu">filter</span>( d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">FromPartyAb</span> <span class="op">!=</span> <span class="st">"TwoPP"</span> )<span class="op">,</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>                  {<span class="dt">x</span><span class="op">:</span> <span class="st">'PartyAb'</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">PrefFlow</span><span class="op">*</span><span class="fl">1.1</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="kw">null</span> }) </span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>  ]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-10" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="113" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 112;"><span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="fu">make_pptable</span>(data<span class="op">,</span> divisionselect)<span class="op">.</span><span class="fu">groupby</span>(<span class="st">'PartyAb'</span>)<span class="op">.</span></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a>    <span class="fu">derive</span>({ <span class="dt">PrefFlow</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">PrefFlow</span><span class="op">===</span><span class="dv">0</span> <span class="op">?</span> <span class="st">".."</span> <span class="op">:</span> aq<span class="op">.</span><span class="fu">pcf</span>(d<span class="op">.</span><span class="at">PrefFlow</span>) })<span class="op">.</span></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot</span>(<span class="st">'FromPartyAb'</span><span class="op">,</span> <span class="st">'PrefFlow'</span><span class="op">,</span> { <span class="dt">sort</span><span class="op">:</span> <span class="kw">false</span>})<span class="op">.</span></span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a>    <span class="fu">relocate</span>(<span class="st">'FirstPref'</span><span class="op">,</span> { <span class="dt">after</span><span class="op">:</span> <span class="st">'PartyAb'</span>})<span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-11" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+
+<script type="ojs-module-contents">
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"import {Plot} from \"@mkfreeman/plot-tooltip\";\nimport {addTooltips} from \"@mkfreeman/plot-tooltip\";\nimport {aq, dt, op} from \"@uwdata/arquero\"\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"data = aq.fromCSV(await FileAttachment('data/prefflows2022.csv').text())\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"make_pptable = function(data, division) {  \n  if (division===null) { \n    var division = data.slice(0,1).get('DivisionNm'); \n  } else { \n    var division = division[\"DivisionNm\"]; \n  }\n  var dataf = data.params({sdivision: division}).\n      filter((d,$)=> d.DivisionNm === $.sdivision).\n      derive({ PrefFlow: d=> d.PrefFlow/op.sum(d.PrefFlow) })\n  var datapp = dataf.groupby('PartyAb').\n    rollup({PrefFlow: d => op.sum(d.PrefFlow) }).\n    derive({ FromPartyAb: d =>  \"TwoPP\" })\n  var datafinal = dataf.select('PartyAb', 'FromPartyAb', 'PrefFlow').\n    concat(datapp)\n  return datafinal; \n}\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"aq.addFunction(\"pcf\", d3.format(\".02%\"))\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"recodestate = ({\"New South Wales\": \"NSW\", \n               \"Victoria\": \"VIC\", \n               \"Queensland\": \"QLD\", \n               \"South Australia\": \"SA\", \n               \"Western Australia\": \"WA\", \n               \"Tasmania\": \"TAS\", \n               \"Northern Territory\": \"NT\", \n               \"Australian Capital Territory\": \"ACT\"}) \n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"viewof stateselect = Inputs.select(Object.keys(recodestate), \n    {value: \"NSW\", label: \"State/Territory\", multiple: false })\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"viewof divisionselect = Inputs.table(Object(data.params({sstate: recodestate[stateselect] }).\n      filter((d,$) => d.StateAb === $.sstate).\n      groupby('StateAb', 'DivisionNm').\n      rollup({ Candidates: d => op.distinct(d.CandidateId) }).\n      orderby('StateAb','DivisionNm')), { multiple: false, value: d => d[1] }); \n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"label_division = function(divisionselect, data, stateselect) { \n  if (divisionselect === null) { \n    return data.\n      params({ ss: stateselect }).\n      filter((d,$) => d.StateAb === $.ss).\n      slice(0,1).get('DivisionNm')\n  } else { \n    return divisionselect[\"DivisionNm\"];\n  }}\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"md`Preference count for the division of **${label_division(divisionselect, data, recodestate[stateselect])}**`; \n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"Plot.plot({\n  color: { legend: true },\n  y: { tickFormat: d => d3.format(\".1%\")(d) },\n  marks: [ Plot.frame(), \n    Plot.ruleY([0]),\n    Plot.barY(make_pptable(data, divisionselect).filter( d => d.FromPartyAb != \"TwoPP\" ),\n                  {x: 'PartyAb', y: 'PrefFlow', fill: 'FromPartyAb' }), \n    Plot.barY(make_pptable(data, divisionselect).filter( d => d.FromPartyAb != \"TwoPP\" ),\n                  {x: 'PartyAb', y: d => d.PrefFlow*1.1, fill: null }) \n  ]})\n"},{"methodName":"interpret","cellName":"ojs-cell-11","inline":false,"source":"make_pptable(data, divisionselect).groupby('PartyAb').\n    derive({ PrefFlow: d => d.PrefFlow===0 ? \"..\" : aq.pcf(d.PrefFlow) }).\n    pivot('FromPartyAb', 'PrefFlow', { sort: false}).\n    relocate('FirstPref', { after: 'PartyAb'}).view()\n"},{"methodName":"interpretQuiet","source":"shinyInput('stateselect')"},{"methodName":"interpretQuiet","source":"shinyInput('divisionselect')"}]}
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../..";
+window._ojs.paths.runtimeToRoot = "../../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
