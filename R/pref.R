@@ -5,6 +5,14 @@ library(gtExtras)
 
 
 # functions -----
+rightness <- function(x) { 
+ right <- c("ALP"=1, "UAPP"=3, "ON"=3, "LP"=2,
+            "GRN"=0, "LDP"=2, "CYA"=3, "AJP"= 0,
+            "GVIC"=0,  "LNP"=2,"NP"=2, "GAP"=3) 
+ right <- c("ALP"=1, "UAPP"=3, "ON"=3,
+            "GVIC"=0, "GRN"=0, 
+            "LP"=2, "LNP"=2, "NP"=2) 
+ ifelse(x %in% names(right), right[x], NA) }
 
 read_folder <- function(x) { 
   files <- list.files(x)

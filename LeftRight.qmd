@@ -1,0 +1,140 @@
+---
+title: "Left Right Differences of Australian Parties"
+subtitle: "2022 Federal Election Results"
+author: "Christian Klettner"
+format: html
+editor: visual
+execute: 
+  echo: false
+  message: false 
+  warning: false
+---
+
+```{ojs}
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm")
+```
+
+```{r}
+library(tidyverse)
+
+rightness <- function(x) { 
+ right <- c("ALP"=1, "UAPP"=3, "ON"=3, "LP"=2,
+            "GRN"=0, "LDP"=2, "CYA"=3, "AJP"= 0,
+            "GVIC"=0,  "LNP"=2,"NP"=2, "GAP"=3) 
+ right <- c("ALP"=1, "UAPP"=3, "ON"=3,
+            "GVIC"=0, "GRN"=0, 
+            "LP"=2, "LNP"=2, "NP"=2) 
+ ifelse(x %in% names(right), right[x], NA) }
+
+data <- read_csv("data/prefflows2022.csv") 
+```
+
+# Australia Preferential Voting Distribution 
+
+Left-right is scored as: 
+
+- `0` points: GRN & GVIC
+- `1` points: ALP
+- `2` points: LP, LNP & NP
+- `3` points: UAPP, ON 
+
+Other parties and candidates are not scored. The score values therefore have no inherent meaning and the outcome should be interpreted as a relative rank. 
+
+Electorates and parties are scored based on the weighted average preference counts. 
+
+
+## Electoral ratings
+
+```{r}
+electorates <- data |> 
+  filter(CountNum==0) |> 
+  mutate(Right=rightness(PartyAb)) |> 
+  filter(!is.na(Right)) |> 
+  summarise(Right= sum(Right*Votes)/sum(Votes), 
+            Votes = sum(Votes),
+            .by=c("StateAb", "DivisionId", "DivisionNm")) |> 
+  inner_join(data |> 
+               filter(CountNum==max(CountNum), 
+                      .by="DivisionNm") |> 
+               filter(Votes==max(Votes), 
+                      .by="DivisionNm") |> 
+               select(DivisionId, PartyAb, PartyNm), 
+             by="DivisionId")
+ojs_define(elect = electorates)
+```
+
+```{ojs}
+//| fig-cap: Left-Right Distribution of Electorates based on First Preferences
+Plot.plot({ 
+  height: 300,
+  color: { legend: true },
+  r: { range: [0, 8] }, 
+  x: { axis: null, clip: false }, 
+  y: { axis: null },
+  clip: false, 
+  margin: 30,
+  marks: [ 
+    Plot.ruleY([0]),
+    Plot.dotX(transpose(elect), 
+    Plot.dodgeY({x: "Right", 
+                 tip: true, 
+                 title: d => d.StateAb +  "\n" + d.DivisionNm, 
+                 fill: "PartyAb",  //"StateAb", 
+                 r: "Votes", 
+                 anchor: "middle" 
+                }))
+  ]
+})
+```
+
+
+## Candidates 
+
+```{r}
+candidates <- data |> 
+  filter(CountNum > 0) |> 
+  filter(PrefFlow > 0) |> 
+  mutate(Right = rightness(PartyAb)) |> 
+  filter(!is.na(Right)) |> 
+  summarise(Right = sum(Right*PrefFlow)/sum(PrefFlow), 
+            Votes = sum(PrefFlow),
+             .by="FromPartyAb") |>  
+  inner_join(
+    data |> 
+      distinct(PartyAb, PartyNm) |> 
+      mutate(PartyNm = str_remove(PartyNm, "\\s\\(.+\\)")) |> 
+      summarise(PartyNm = head(PartyNm,1), .by="PartyAb"), 
+    by=c("FromPartyAb"="PartyAb")
+  )
+ojs_define(candi=candidates)
+```
+
+
+```{ojs}
+//| fig-cap: Left-Right Distribution of Minor Parties and Independents based on Left-Right Preference Redistribution
+Plot.plot({ 
+  height: 300, 
+  color: { legend: false, scheme: "BuRd", type: "sequential", reverse: true },
+  r: { range: [0, 50] }, 
+  x: { axis: null, clip: false }, 
+  y: { axis: null },
+  //clip: false, 
+  margin: 30,
+  marks: [ 
+    Plot.ruleY([0]),
+    Plot.dotX(transpose(candi).filter(d => !["ALP", "LP", "LNP", "NP"].includes(d.FromPartyAb)), 
+    Plot.dodgeY({x: "Right", 
+                 tip: true, 
+                 title: d => d.FromPartyAb + "\n" + d.PartyNm,
+                 fill: "Right",
+                 r: "Votes", 
+                 anchor: "middle" 
+                }))
+  ]
+})
+```
+
+
+
+
+

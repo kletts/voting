@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Christian Klettner">
+
+<title>Left Right Differences of Australian Parties</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script type="ojs-define">
+{"contents":[{"name":"elect","value":{"StateAb":["SA","VIC","VIC","NSW","SA","NSW","TAS","ACT","VIC","NSW","NSW","QLD","NSW","QLD","SA","QLD","TAS","NSW","WA","QLD","VIC","WA","NSW","VIC","ACT","WA","QLD","VIC","NSW","VIC","TAS","NSW","VIC","VIC","VIC","WA","NSW","NSW","WA","QLD","VIC","QLD","NSW","VIC","WA","NSW","QLD","QLD","NSW","ACT","QLD","VIC","QLD","QLD","WA","NSW","TAS","VIC","WA","VIC","NSW","VIC","VIC","VIC","NSW","NSW","SA","QLD","QLD","WA","VIC","QLD","VIC","SA","QLD","VIC","VIC","NSW","NSW","NSW","VIC","VIC","VIC","QLD","NSW","SA","VIC","VIC","VIC","QLD","QLD","NSW","NT","QLD","NSW","TAS","NSW","NSW","VIC","NSW","SA","VIC","QLD","VIC","SA","VIC","NSW","QLD","VIC","VIC","NSW","VIC","QLD","WA","QLD","NSW","NSW","VIC","NSW","WA","QLD","NSW","NSW","NSW","NSW","WA","WA","QLD","QLD","NSW","NSW","NSW","NSW","QLD","VIC","NSW","NT","SA","SA","WA","NSW","WA","VIC","NSW","NSW","NSW","NSW","NSW","QLD","VIC","QLD"],"DivisionId":[179,197,198,103,180,104,192,318,200,105,106,304,107,310,182,155,193,108,235,156,201,317,109,203,101,236,157,204,111,205,319,112,320,328,208,237,113,114,238,158,209,252,115,210,312,117,159,160,118,102,161,211,311,162,239,119,195,321,240,212,120,213,214,309,121,122,183,163,164,305,326,165,215,185,166,216,217,124,125,126,218,219,220,167,127,186,221,223,222,168,169,128,306,302,130,196,131,132,322,133,187,224,170,225,188,226,315,171,228,229,134,323,172,242,173,135,136,324,137,243,174,138,139,140,249,244,245,175,176,144,145,250,146,177,232,148,307,325,190,247,149,248,233,151,251,152,153,150,178,234,316],"DivisionNm":["Adelaide","Aston","Ballarat","Banks","Barker","Barton","Bass","Bean","Bendigo","Bennelong","Berowra","Blair","Blaxland","Bonner","Boothby","Bowman","Braddon","Bradfield","Brand","Brisbane","Bruce","Burt","Calare","Calwell","Canberra","Canning","Capricornia","Casey","Chifley","Chisholm","Clark","Cook","Cooper","Corangamite","Corio","Cowan","Cowper","Cunningham","Curtin","Dawson","Deakin","Dickson","Dobell","Dunkley","Durack","Eden-Monaro","Fadden","Fairfax","Farrer","Fenner","Fisher","Flinders","Flynn","Forde","Forrest","Fowler","Franklin","Fraser","Fremantle","Gellibrand","Gilmore","Gippsland","Goldstein","Gorton","Grayndler","Greenway","Grey","Griffith","Groom","Hasluck","Hawke","Herbert","Higgins","Hindmarsh","Hinkler","Holt","Hotham","Hughes","Hume","Hunter","Indi","Isaacs","Jagajaga","Kennedy","Kingsford Smith","Kingston","Kooyong","La Trobe","Lalor","Leichhardt","Lilley","Lindsay","Lingiari","Longman","Lyne","Lyons","Macarthur","Mackellar","Macnamara","Macquarie","Makin","Mallee","Maranoa","Maribyrnong","Mayo","McEwen","McMahon","McPherson","Melbourne","Menzies","Mitchell","Monash","Moncrieff","Moore","Moreton","New England","Newcastle","Nicholls","North Sydney","O'Connor","Oxley","Page","Parkes","Parramatta","Paterson","Pearce","Perth","Petrie","Rankin","Reid","Richmond","Riverina","Robertson","Ryan","Scullin","Shortland","Solomon","Spence","Sturt","Swan","Sydney","Tangney","Wannon","Warringah","Watson","Wentworth","Werriwa","Whitlam","Wide Bay","Wills","Wright"],"Right":[1.2383,1.5094,1.2916,1.5445,1.7343,1.3549,1.4821,1.2844,1.3319,1.4112,1.4844,1.5239,1.4398,1.458,1.3487,1.5844,1.6183,1.5815,1.2944,1.1951,1.5002,1.3027,1.8489,1.486,1.0428,1.5427,1.7686,1.4828,1.443,1.3379,1.2008,1.6478,1.0419,1.3258,1.3023,1.3367,1.7828,1.2411,1.5382,1.7659,1.4064,1.4773,1.4938,1.4168,1.5823,1.4082,1.6935,1.6099,1.6928,1.2194,1.6424,1.6052,1.7527,1.6495,1.4938,1.4732,1.2215,1.2252,1.1792,1.2906,1.4774,1.7676,1.6226,1.521,1.0151,1.3992,1.7294,1.076,1.8103,1.397,1.504,1.6435,1.2351,1.3507,1.7901,1.5353,1.3253,1.6961,1.7758,1.5247,1.8539,1.3802,1.2588,1.556,1.2504,1.3222,1.6907,1.6165,1.4061,1.5774,1.2868,1.6086,1.1411,1.6448,1.704,1.4886,1.5163,1.7574,1.071,1.4328,1.3877,1.8664,1.9318,1.2498,1.4723,1.4375,1.5341,1.5897,0.6874,1.4164,1.5596,1.6037,1.6475,1.411,1.2677,1.6896,1.1901,1.8935,1.4988,1.5703,1.3677,1.6529,1.7685,1.4448,1.5489,1.3668,1.1418,1.5609,1.4702,1.4039,1.1433,1.7321,1.4598,1.1778,1.4286,1.4505,1.0841,1.5023,1.3902,1.3025,1.0489,1.3783,1.6686,1.6513,1.4102,1.6097,1.5664,1.4363,1.7142,1.0216,1.7789],"Votes":[110263,95076,90558,89820,99936,91623,58871,90371,92572,94776,86366,96501,81677,96374,102067,100449,55838,73488,87837,104856,90469,83991,85428,80050,87550,86503,82979,82114,92087,89532,34322,97817,86708,94166,87687,92131,77714,98366,72089,85436,93516,93953,97972,87047,82849,93028,98372,96005,90459,89575,105764,81638,86554,85799,87324,58463,60978,85323,89710,87374,106094,96620,61168,85654,90230,92638,88025,106310,79675,89615,73768,78277,89595,106166,88170,83070,93611,79880,83715,95745,55122,91140,93569,51587,97466,105320,59040,86421,80151,78522,95217,101024,26117,97969,91030,62876,108930,60692,87526,90849,105735,88955,88423,86223,75031,91419,81920,92116,89344,96405,104485,82118,89847,98718,91088,83731,100836,66141,68978,87888,95412,84147,75188,77576,111381,86221,94335,101993,85538,91605,84243,83120,90792,94687,85231,91782,35515,104491,107462,91220,100605,100833,77278,50027,85727,55767,91653,105275,85205,82919,104301],"PartyAb":["ALP","LP","ALP","LP","LP","ALP","LP","ALP","ALP","ALP","LP","ALP","ALP","LNP","ALP","LNP","LP","LP","ALP","GRN","ALP","ALP","NP","ALP","ALP","LP","LNP","LP","ALP","ALP","WILKIE","LP","ALP","ALP","ALP","ALP","NP","ALP","CHANEY","LNP","LP","LNP","ALP","ALP","LP","ALP","LNP","LNP","LP","ALP","LNP","LP","LNP","LNP","LP","LE","ALP","ALP","ALP","ALP","ALP","NP","DANIEL","ALP","ALP","ALP","LP","GRN","LNP","ALP","ALP","LNP","ALP","ALP","LNP","ALP","ALP","LP","LP","ALP","HAINES","ALP","ALP","KAP","ALP","ALP","RYAN","LP","ALP","LNP","ALP","LP","ALP","LNP","NP","ALP","ALP","SCAMPS","ALP","ALP","ALP","NP","LNP","ALP","XEN","ALP","ALP","LNP","GVIC","LP","LP","LP","LNP","LP","ALP","NP","ALP","NP","TINK","LP","ALP","NP","NP","ALP","ALP","ALP","ALP","LNP","ALP","ALP","ALP","NP","ALP","GRN","ALP","ALP","ALP","ALP","LP","ALP","ALP","ALP","LP","STEGGALL","ALP","SPENDER","ALP","ALP","LNP","ALP","LNP"],"PartyNm":["Australian Labor Party (South Australian Branch)","Liberal Party of Australia (Victorian Division)","Australian Labor Party (Victorian Branch)","Liberal Party of Australia, NSW Division","Liberal Party of Australia (S.A. Division)","Australian Labor Party (N.S.W. Branch)","Liberal Party of Australia - Tasmanian Division","Australian Labor Party (ACT Branch)","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","Liberal Party of Australia, NSW Division","Australian Labor Party (State of Queensland)","Australian Labor Party (N.S.W. Branch)","Liberal National Party of Queensland","Australian Labor Party (South Australian Branch)","Liberal National Party of Queensland","Liberal Party of Australia - Tasmanian Division","Liberal Party of Australia, NSW Division","Australian Labor Party (Western Australian Branch)","Queensland Greens","Australian Labor Party (Victorian Branch)","Australian Labor Party (Western Australian Branch)","National Party of Australia - N.S.W.","Australian Labor Party (Victorian Branch)","Australian Labor Party (ACT Branch)","Liberal Party (W.A. Division) Inc","Liberal National Party of Queensland","Liberal Party of Australia (Victorian Division)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (Victorian Branch)","Independent","Liberal Party of Australia, NSW Division","Australian Labor Party (Victorian Branch)","Australian Labor Party (Victorian Branch)","Australian Labor Party (Victorian Branch)","Australian Labor Party (Western Australian Branch)","National Party of Australia - N.S.W.","Australian Labor Party (N.S.W. Branch)","Independent","Liberal National Party of Queensland","Liberal Party of Australia (Victorian Division)","Liberal National Party of Queensland","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (Victorian Branch)","Liberal Party (W.A. Division) Inc","Australian Labor Party (N.S.W. Branch)","Liberal National Party of Queensland","Liberal National Party of Queensland","Liberal Party of Australia, NSW Division","Australian Labor Party (ACT Branch)","Liberal National Party of Queensland","Liberal Party of Australia (Victorian Division)","Liberal National Party of Queensland","Liberal National Party of Queensland","Liberal Party (W.A. Division) Inc","Independent","Australian Labor Party (Tasmanian Branch)","Australian Labor Party (Victorian Branch)","Australian Labor Party (Western Australian Branch)","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","National Party of Australia - Victoria","Independent","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (N.S.W. Branch)","Liberal Party of Australia (S.A. Division)","Queensland Greens","Liberal National Party of Queensland","Australian Labor Party (Western Australian Branch)","Australian Labor Party (Victorian Branch)","Liberal National Party of Queensland","Australian Labor Party (Victorian Branch)","Australian Labor Party (South Australian Branch)","Liberal National Party of Queensland","Australian Labor Party (Victorian Branch)","Australian Labor Party (Victorian Branch)","Liberal Party of Australia, NSW Division","Liberal Party of Australia, NSW Division","Australian Labor Party (N.S.W. Branch)","Independent","Australian Labor Party (Victorian Branch)","Australian Labor Party (Victorian Branch)","Katter's Australian Party (KAP)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (South Australian Branch)","Independent","Liberal Party of Australia (Victorian Division)","Australian Labor Party (Victorian Branch)","Liberal National Party of Queensland","Australian Labor Party (State of Queensland)","Liberal Party of Australia, NSW Division","Australian Labor Party (Northern Territory) Branch","Liberal National Party of Queensland","National Party of Australia - N.S.W.","Australian Labor Party (Tasmanian Branch)","Australian Labor Party (N.S.W. Branch)","Independent","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (South Australian Branch)","National Party of Australia - Victoria","Liberal National Party of Queensland","Australian Labor Party (Victorian Branch)","Centre Alliance","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","Liberal National Party of Queensland","The Australian Greens - Victoria","Liberal Party of Australia (Victorian Division)","Liberal Party of Australia, NSW Division","Liberal Party of Australia (Victorian Division)","Liberal National Party of Queensland","Liberal Party (W.A. Division) Inc","Australian Labor Party (State of Queensland)","National Party of Australia - N.S.W.","Australian Labor Party (N.S.W. Branch)","National Party of Australia - Victoria","Independent","Liberal Party (W.A. Division) Inc","Australian Labor Party (State of Queensland)","National Party of Australia - N.S.W.","National Party of Australia - N.S.W.","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (Western Australian Branch)","Australian Labor Party (Western Australian Branch)","Liberal National Party of Queensland","Australian Labor Party (State of Queensland)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (N.S.W. Branch)","National Party of Australia - N.S.W.","Australian Labor Party (N.S.W. Branch)","Queensland Greens","Australian Labor Party (Victorian Branch)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (Northern Territory) Branch","Australian Labor Party (South Australian Branch)","Liberal Party of Australia (S.A. Division)","Australian Labor Party (Western Australian Branch)","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (Western Australian Branch)","Liberal Party of Australia (Victorian Division)","Independent","Australian Labor Party (N.S.W. Branch)","Independent","Australian Labor Party (N.S.W. Branch)","Australian Labor Party (N.S.W. Branch)","Liberal National Party of Queensland","Australian Labor Party (Victorian Branch)","Liberal National Party of Queensland"]}}]}
+</script>
+<script type="ojs-define">
+{"contents":[{"name":"candi","value":{"FromPartyAb":["CYA","SOPA","UAPP","ON","GRN","TNL","LDP","GVIC","GRAHAM","KHOUW","PANNELL","NP","FRY","AJP","RAZAY","JLN","CHRISTIE","LAURIE","DPDA","WOODWARD","CASWELL","AUVA","BUSUTTIL","DYER","TLOC","GARLAND","KITSON","ALP","GAP","AUC","WAP","VNS","BOHM","LP","IMO","WILLIAMS","MURRAY","DHJP","COLE","FERRES MILES","KHAN","CEC","TSENG","MURPHY","SAL","KAP","LIU","PROHASKA","BUCHBACH","BERGWERF","AUD","THALER","SPP","BROOKER","AUSTRALIE","SMITH","DUNCAN-STRELEC","ASP","RUSSELL","O'CONNOR","SCOTT","GREAVES","DIGIGLIO","LONCAR","KILHAM","NANDA","BOSI","CARMODY","HABERMANN","SMOLENSKI","BINGHAM","CLARE","EGAN","REAS","DEMPSEY","RAGUPATHY","SEYMOUR","STEELE","MENERIPITIYAGE DONA","ACKERY","LARUFFA","BONDS","MUSTAF","SACKLEY","DE JONGE","ANDERSON","MOINUDDIN","ADAMSON AGARS","GRAVENER","HMP","PEARCE","ATTKINS","MYERS","HAENEL","BALDWIN","ROBSON","LEONARD","LEDGER","SHARPHAM","IAP","LUKE","HOWE","CHRISTOU","BAINI","SHARPLES","JONES","WARTH","CIAVARELLA","AUP","PAYNTER","GARNER","JEROME","JACOBI"],"Right":[2.1011,0.9284,1.8235,1.6021,1.2629,1.3319,2.06,1.2357,1.6112,1.4484,1.99,1.7775,1.9691,1.1685,1.3414,1.2721,0.8715,1.8793,1.2373,1.5858,1.2144,2.0043,2.0852,0.6921,0.8014,1.4292,1.0552,1.0938,2.2774,2.0473,1.6341,0.7542,0.9597,0.8317,2.1258,1.351,2.0377,1.9504,2.3028,0.6902,1.7022,1.6586,1.1311,1.7729,0.8193,1.8519,1.2786,1.5226,1.7405,1.9066,1.2353,1.8511,1.281,1.5886,1.4542,1.7254,1.4707,2.1166,0.9471,1.3136,2.3343,1.8272,1.8067,1.9178,1.0068,1.4841,2.123,1.7667,1.4079,1.8273,1.5127,1.9669,1.1118,0.6485,1.4879,1.6378,1.343,1.3361,1.3668,1.3374,2.0057,2.0473,1.0244,1.4858,1.9202,1.8662,1.8642,1.6979,1.5968,1.4227,1.9034,1.5576,1.428,1.6957,1.6119,1.2201,1.3608,1.3995,1.5219,1.6391,1.3693,1.7003,1.5467,1.5859,1.6884,1.1503,1.436,1.5319,1.0062,1.5254,2.2148,1.6859,1.9893],"Votes":[40628,11982,779507,1061431,1316956,4501,279988,486781,1911,814,700,25355,6056,82710,2712,43631,10061,4591,1846,268,3283,4872,493,10638,4038,4567,1251,155752,33367,21283,37902,28853,6276,146653,21360,6544,3868,4555,3042,14960,1652,3530,412,2968,14508,29269,1084,796,3857,5118,425,1672,3708,4718,284,1140,2560,20295,3556,19177,4951,4370,5557,3067,2639,1101,4701,780,22574,3126,16447,302,3435,1559,22920,2935,1720,21692,518,26116,1055,9132,3113,2005,3169,142,2607,96,1012,7825,2123,6681,1923,1081,21312,727,20411,1169,14977,7183,23646,1802,3704,3866,138,965,3461,1972,804,1734,1778,1678,7384],"PartyNm":["Australian Federation Party","FUSION: Science, Pirate, Secular, Climate Emergency","United Australia Party","Pauline Hanson's One Nation","Australian Greens","TNL","Liberal Democratic Party","The Australian Greens - Victoria","Independent","Non Affiliated","Independent","National Party of Australia Inc.","Independent","Animal Justice Party","Independent","Jacqui Lambie Network","Independent","Independent","Drew Pavlou Democratic Alliance","Independent","Independent","Australian Values Party","Independent","Independent","The Local Party of Australia","Independent","Independent","Australian Labor Party","The Great Australian Party","Australian Christians","WESTERN AUSTRALIA PARTY","Victorian Socialists","Independent","Liberal Party of Australia","Informed Medical Options Party","Independent","Independent","Derryn Hinch's Justice Party","Independent","Independent","Independent","Australian Citizens Party","Independent","Independent","Socialist Alliance","Katter's Australian Party","Independent","Independent","Independent","Independent","Australian Democrats","Independent","Sustainable Australia Party - Stop Overdevelopment / Corruption","Independent","Independent","Independent","Independent","Shooters, Fishers and Farmers Party","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Reason Australia","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Legalise Cannabis Australia","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Indigenous - Aboriginal Party of Australia","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Independent","Australian Progressives","Independent","Independent","Independent","Independent"]}}]}
+</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Left Right Differences of Australian Parties</h1>
+<p class="subtitle lead">2022 Federal Election Results</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Christian Klettner </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="13" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 12;"><span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<section id="australia-preferential-voting-distribution" class="level1">
+<h1>Australia Preferential Voting Distribution</h1>
+<p>Left-right is scored as:</p>
+<ul>
+<li><code>0</code> points: GRN &amp; GVIC</li>
+<li><code>1</code> points: ALP</li>
+<li><code>2</code> points: LP, LNP &amp; NP</li>
+<li><code>3</code> points: UAPP, ON</li>
+</ul>
+<p>Other parties and candidates are not scored. The score values therefore have no inherent meaning and the outcome should be interpreted as a relative rank.</p>
+<p>Electorates and parties are scored based on the weighted average preference counts.</p>
+<section id="electoral-ratings" class="level2">
+<h2 class="anchored" data-anchor-id="electoral-ratings">Electoral ratings</h2>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="67" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({ </span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> { <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="dt">r</span><span class="op">:</span> { <span class="dt">range</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">8</span>] }<span class="op">,</span> </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">false</span> }<span class="op">,</span> </span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="dt">clip</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> </span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="dt">margin</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [ </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dotX</span>(<span class="fu">transpose</span>(elect)<span class="op">,</span> </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dodgeY</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Right"</span><span class="op">,</span> </span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">StateAb</span> <span class="op">+</span>  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">DivisionNm</span><span class="op">,</span> </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">fill</span><span class="op">:</span> <span class="st">"PartyAb"</span><span class="op">,</span>  <span class="co">//"StateAb", </span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">r</span><span class="op">:</span> <span class="st">"Votes"</span><span class="op">,</span> </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">anchor</span><span class="op">:</span> <span class="st">"middle"</span> </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>                }))</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-ojs-cell-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: Left-Right Distribution of Electorates based on First Preferences</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="candidates" class="level2">
+<h2 class="anchored" data-anchor-id="candidates">Candidates</h2>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="114" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 113;"><span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({ </span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span> </span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> { <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">scheme</span><span class="op">:</span> <span class="st">"BuRd"</span><span class="op">,</span> <span class="dt">type</span><span class="op">:</span> <span class="st">"sequential"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>  <span class="dt">r</span><span class="op">:</span> { <span class="dt">range</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">50</span>] }<span class="op">,</span> </span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">false</span> }<span class="op">,</span> </span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>  <span class="co">//clip: false, </span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>  <span class="dt">margin</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [ </span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dotX</span>(<span class="fu">transpose</span>(candi)<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> <span class="op">!</span>[<span class="st">"ALP"</span><span class="op">,</span> <span class="st">"LP"</span><span class="op">,</span> <span class="st">"LNP"</span><span class="op">,</span> <span class="st">"NP"</span>]<span class="op">.</span><span class="fu">includes</span>(d<span class="op">.</span><span class="at">FromPartyAb</span>))<span class="op">,</span> </span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dodgeY</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Right"</span><span class="op">,</span> </span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> </span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">FromPartyAb</span> <span class="op">+</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">PartyNm</span><span class="op">,</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">fill</span><span class="op">:</span> <span class="st">"Right"</span><span class="op">,</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">r</span><span class="op">:</span> <span class="st">"Votes"</span><span class="op">,</span> </span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>                 <span class="dt">anchor</span><span class="op">:</span> <span class="st">"middle"</span> </span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>                }))</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-ojs-cell-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="ojs-cell-3" data-nodetype="expression">
+
+</div>
+<figcaption class="figure-caption">Figure&nbsp;2: Left-Right Distribution of Minor Parties and Independents based on Left-Right Preference Redistribution</figcaption>
+</figure>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"Plot = import(\"https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm\")\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot.plot({ \n  height: 300,\n  color: { legend: true },\n  r: { range: [0, 8] }, \n  x: { axis: null, clip: false }, \n  y: { axis: null },\n  clip: false, \n  margin: 30,\n  marks: [ \n    Plot.ruleY([0]),\n    Plot.dotX(transpose(elect), \n    Plot.dodgeY({x: \"Right\", \n                 tip: true, \n                 title: d => d.StateAb +  \"\\n\" + d.DivisionNm, \n                 fill: \"PartyAb\",  //\"StateAb\", \n                 r: \"Votes\", \n                 anchor: \"middle\" \n                }))\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"Plot.plot({ \n  height: 300, \n  color: { legend: false, scheme: \"BuRd\", type: \"sequential\", reverse: true },\n  r: { range: [0, 50] }, \n  x: { axis: null, clip: false }, \n  y: { axis: null },\n  //clip: false, \n  margin: 30,\n  marks: [ \n    Plot.ruleY([0]),\n    Plot.dotX(transpose(candi).filter(d => ![\"ALP\", \"LP\", \"LNP\", \"NP\"].includes(d.FromPartyAb)), \n    Plot.dodgeY({x: \"Right\", \n                 tip: true, \n                 title: d => d.FromPartyAb + \"\\n\" + d.PartyNm,\n                 fill: \"Right\",\n                 r: \"Votes\", \n                 anchor: \"middle\" \n                }))\n  ]\n})\n"}]}
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

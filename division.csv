@@ -1,0 +1,152 @@
+StateAb,DivisionId,DivisionNm,Right,Votes,PartyAb,PartyNm
+SA,179,Adelaide,1.2520943374155291,111133,ALP,Australian Labor Party (South Australian Branch)
+VIC,197,Aston,1.52002839885993,97187,LP,Liberal Party of Australia (Victorian Division)
+VIC,198,Ballarat,1.3280257474379604,94456,ALP,Australian Labor Party (Victorian Branch)
+NSW,103,Banks,1.5508651354793377,91084,LP,"Liberal Party of Australia, NSW Division"
+SA,180,Barker,1.7438229919758481,100696,LP,Liberal Party of Australia (S.A. Division)
+NSW,104,Barton,1.3549217991115767,91623,ALP,Australian Labor Party (N.S.W. Branch)
+TAS,192,Bass,1.464670144621277,60572,LP,Liberal Party of Australia - Tasmanian Division
+ACT,318,Bean,1.2844275265295282,90371,ALP,Australian Labor Party (ACT Branch)
+VIC,200,Bendigo,1.3521055939660591,95460,ALP,Australian Labor Party (Victorian Branch)
+NSW,105,Bennelong,1.4205783107511811,96315,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,106,Berowra,1.506380211253392,89182,LP,"Liberal Party of Australia, NSW Division"
+QLD,304,Blair,1.4999804197994988,102144,ALP,Australian Labor Party (State of Queensland)
+NSW,107,Blaxland,1.4398300623186453,81677,ALP,Australian Labor Party (N.S.W. Branch)
+QLD,310,Bonner,1.458038475107394,96374,LNP,Liberal National Party of Queensland
+SA,182,Boothby,1.3475546009237964,105218,ALP,Australian Labor Party (South Australian Branch)
+QLD,155,Bowman,1.5843661957809436,100449,LNP,Liberal National Party of Queensland
+TAS,193,Braddon,1.6088366013071895,57375,LP,Liberal Party of Australia - Tasmanian Division
+NSW,108,Bradfield,1.5814554757239276,73488,LP,"Liberal Party of Australia, NSW Division"
+WA,235,Brand,1.3418279321750788,90999,ALP,Australian Labor Party (Western Australian Branch)
+QLD,156,Brisbane,1.1849758267615214,108798,GRN,Queensland Greens
+VIC,201,Bruce,1.5254591247769966,95290,ALP,Australian Labor Party (Victorian Branch)
+WA,317,Burt,1.3371786497457192,85732,ALP,Australian Labor Party (Western Australian Branch)
+NSW,109,Calare,1.848878587816641,85428,NP,National Party of Australia - N.S.W.
+VIC,203,Calwell,1.5140629214585224,81562,ALP,Australian Labor Party (Victorian Branch)
+ACT,101,Canberra,1.0427527127355796,87550,ALP,Australian Labor Party (ACT Branch)
+WA,236,Canning,1.5569640418752846,87880,LP,Liberal Party (W.A. Division) Inc
+QLD,157,Capricornia,1.7973362131029518,86118,LNP,Liberal National Party of Queensland
+VIC,204,Casey,1.4751996491713983,86652,LP,Liberal Party of Australia (Victorian Division)
+NSW,111,Chifley,1.4620136339800733,95350,ALP,Australian Labor Party (N.S.W. Branch)
+VIC,205,Chisholm,1.3434258571105437,92841,ALP,Australian Labor Party (Victorian Branch)
+TAS,319,Clark,1.1895566886789823,35889,WILKIE,Independent
+NSW,112,Cook,1.6478321764110533,97817,LP,"Liberal Party of Australia, NSW Division"
+VIC,320,Cooper,1.0160602822920768,88915,ALP,Australian Labor Party (Victorian Branch)
+VIC,328,Corangamite,1.3310228437104454,99546,ALP,Australian Labor Party (Victorian Branch)
+VIC,208,Corio,1.3143174603174603,94500,ALP,Australian Labor Party (Victorian Branch)
+WA,237,Cowan,1.3389622415748457,96111,ALP,Australian Labor Party (Western Australian Branch)
+NSW,113,Cowper,1.7942094355723517,82030,NP,National Party of Australia - N.S.W.
+NSW,114,Cunningham,1.2577431318544738,100573,ALP,Australian Labor Party (N.S.W. Branch)
+WA,238,Curtin,1.5534645582825455,72852,CHANEY,Independent
+QLD,158,Dawson,1.7934404467637095,87384,LNP,Liberal National Party of Queensland
+VIC,209,Deakin,1.4086786903327273,97918,LP,Liberal Party of Australia (Victorian Division)
+QLD,252,Dickson,1.4840895481620775,95189,LNP,Liberal National Party of Queensland
+NSW,115,Dobell,1.501642968396724,99515,ALP,Australian Labor Party (N.S.W. Branch)
+VIC,210,Dunkley,1.410729809614883,92024,ALP,Australian Labor Party (Victorian Branch)
+WA,312,Durack,1.6505859375,87040,LP,Liberal Party (W.A. Division) Inc
+NSW,117,Eden-Monaro,1.4244822431079005,95653,ALP,Australian Labor Party (N.S.W. Branch)
+QLD,159,Fadden,1.7025275245649343,101364,LNP,Liberal National Party of Queensland
+QLD,160,Fairfax,1.5929793178300806,99506,LNP,Liberal National Party of Queensland
+NSW,118,Farrer,1.698111977752189,92054,LP,"Liberal Party of Australia, NSW Division"
+ACT,102,Fenner,1.2339807846101598,91281,ALP,Australian Labor Party (ACT Branch)
+QLD,161,Fisher,1.6011023651077478,108494,LNP,Liberal National Party of Queensland
+VIC,211,Flinders,1.5856499133448874,86550,LP,Liberal Party of Australia (Victorian Division)
+QLD,311,Flynn,1.7809881895987174,88566,LNP,Liberal National Party of Queensland
+QLD,162,Forde,1.6154480755904126,90911,LNP,Liberal National Party of Queensland
+WA,239,Forrest,1.5681260757314974,92960,LP,Liberal Party (W.A. Division) Inc
+NSW,119,Fowler,1.4914543322819822,60557,LE,Independent
+TAS,195,Franklin,1.2179376151411612,63509,ALP,Australian Labor Party (Tasmanian Branch)
+VIC,321,Fraser,1.2459964412811388,87672,ALP,Australian Labor Party (Victorian Branch)
+WA,240,Fremantle,1.2605129939442619,94621,ALP,Australian Labor Party (Western Australian Branch)
+VIC,212,Gellibrand,1.3290956402849141,90694,ALP,Australian Labor Party (Victorian Branch)
+NSW,120,Gilmore,1.4817168922455695,106984,ALP,Australian Labor Party (N.S.W. Branch)
+VIC,213,Gippsland,1.7774364259806157,100906,NP,National Party of Australia - Victoria
+VIC,214,Goldstein,1.6349462365591398,63240,DANIEL,Independent
+VIC,309,Gorton,1.5609174249395086,88029,ALP,Australian Labor Party (Victorian Branch)
+NSW,121,Grayndler,1.0023747510341658,91378,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,122,Greenway,1.4181616693848533,95652,ALP,Australian Labor Party (N.S.W. Branch)
+SA,183,Grey,1.7438035775675647,90173,LP,Liberal Party of Australia (S.A. Division)
+QLD,163,Griffith,1.0760417646505502,106310,GRN,Queensland Greens
+QLD,164,Groom,1.8328490161794764,81214,LNP,Liberal National Party of Queensland
+WA,305,Hasluck,1.4354016883649632,92634,ALP,Australian Labor Party (Western Australian Branch)
+VIC,326,Hawke,1.5764502521897292,77521,ALP,Australian Labor Party (Victorian Branch)
+QLD,165,Herbert,1.6283510605212415,80385,LNP,Liberal National Party of Queensland
+VIC,215,Higgins,1.2492637130128756,94053,ALP,Australian Labor Party (Victorian Branch)
+SA,185,Hindmarsh,1.3495464143624878,110343,ALP,Australian Labor Party (South Australian Branch)
+QLD,166,Hinkler,1.7901326981966654,88170,LNP,Liberal National Party of Queensland
+VIC,216,Holt,1.560732055252079,86223,ALP,Australian Labor Party (Victorian Branch)
+VIC,217,Hotham,1.3697131793776571,100202,ALP,Australian Labor Party (Victorian Branch)
+NSW,124,Hughes,1.6960691036554831,79880,LP,"Liberal Party of Australia, NSW Division"
+NSW,125,Hume,1.7778067112505178,84485,LP,"Liberal Party of Australia, NSW Division"
+NSW,126,Hunter,1.4863563239456696,98214,ALP,Australian Labor Party (N.S.W. Branch)
+VIC,218,Indi,1.8048199286812796,59171,HAINES,Independent
+VIC,219,Isaacs,1.3786869551047014,98184,ALP,Australian Labor Party (Victorian Branch)
+VIC,220,Jagajaga,1.3007554055844963,98093,ALP,Australian Labor Party (Victorian Branch)
+QLD,167,Kennedy,1.5559927888809195,51587,KAP,Katter's Australian Party (KAP)
+NSW,127,Kingsford Smith,1.2504052695298873,97466,ALP,Australian Labor Party (N.S.W. Branch)
+SA,186,Kingston,1.3392513087529019,106399,ALP,Australian Labor Party (South Australian Branch)
+VIC,221,Kooyong,1.682266578686902,60620,RYAN,Independent
+VIC,223,La Trobe,1.594739942403351,91672,LP,Liberal Party of Australia (Victorian Division)
+VIC,222,Lalor,1.4479498254541152,84505,ALP,Australian Labor Party (Victorian Branch)
+QLD,168,Leichhardt,1.5610348824167197,80241,LNP,Liberal National Party of Queensland
+QLD,169,Lilley,1.3044177447274887,97629,ALP,Australian Labor Party (State of Queensland)
+NSW,128,Lindsay,1.6148210928291005,102651,LP,"Liberal Party of Australia, NSW Division"
+NT,306,Lingiari,1.2007482629609834,28065,ALP,Australian Labor Party (Northern Territory) Branch
+QLD,302,Longman,1.6186005488043904,102040,LNP,Liberal National Party of Queensland
+NSW,130,Lyne,1.724640791383081,97854,NP,National Party of Australia - N.S.W.
+TAS,196,Lyons,1.4680004894762604,65376,ALP,Australian Labor Party (Tasmanian Branch)
+NSW,131,Macarthur,1.5258488036210822,111127,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,132,Mackellar,1.7574474395307453,60692,SCAMPS,Independent
+VIC,322,Macnamara,1.0705403745778324,91196,ALP,Australian Labor Party (Victorian Branch)
+NSW,133,Macquarie,1.4098625363843031,94134,ALP,Australian Labor Party (N.S.W. Branch)
+SA,187,Makin,1.4162594526300143,107642,ALP,Australian Labor Party (South Australian Branch)
+VIC,224,Mallee,1.866370636838851,88955,NP,National Party of Australia - Victoria
+QLD,170,Maranoa,1.9437150525609483,89420,LNP,Liberal National Party of Queensland
+VIC,225,Maribyrnong,1.323170268422138,92131,ALP,Australian Labor Party (Victorian Branch)
+SA,188,Mayo,1.4715482851193016,79714,XEN,Centre Alliance
+VIC,226,McEwen,1.4807300535943753,95719,ALP,Australian Labor Party (Victorian Branch)
+NSW,315,McMahon,1.5496212031814212,84742,ALP,Australian Labor Party (N.S.W. Branch)
+QLD,171,McPherson,1.6074936954617876,94773,LNP,Liberal National Party of Queensland
+VIC,228,Melbourne,0.7002796566077003,92256,GVIC,The Australian Greens - Victoria
+VIC,229,Menzies,1.452677219136994,101019,LP,Liberal Party of Australia (Victorian Division)
+NSW,134,Mitchell,1.5746952205780411,108193,LP,"Liberal Party of Australia, NSW Division"
+VIC,323,Monash,1.6308663423673848,86340,LP,Liberal Party of Australia (Victorian Division)
+QLD,172,Moncrieff,1.631718134203188,97181,LNP,Liberal National Party of Queensland
+WA,242,Moore,1.4535470641586814,101436,LP,Liberal Party (W.A. Division) Inc
+QLD,173,Moreton,1.2951618479623148,92556,ALP,Australian Labor Party (State of Queensland)
+NSW,135,New England,1.7009493124676371,86905,NP,National Party of Australia - N.S.W.
+NSW,136,Newcastle,1.1801563830907194,104487,ALP,Australian Labor Party (N.S.W. Branch)
+VIC,324,Nicholls,1.9044136588716833,69874,NP,National Party of Australia - Victoria
+NSW,137,North Sydney,1.5068258655368683,70101,TINK,Independent
+WA,243,O'Connor,1.627816059318795,91573,LP,Liberal Party (W.A. Division) Inc
+QLD,174,Oxley,1.367710560516497,95412,ALP,Australian Labor Party (State of Queensland)
+NSW,138,Page,1.6805163236138152,88859,NP,National Party of Australia - N.S.W.
+NSW,139,Parkes,1.7849118166874713,80911,NP,National Party of Australia - N.S.W.
+NSW,140,Parramatta,1.4111437816025492,81283,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,249,Paterson,1.555388400205306,113002,ALP,Australian Labor Party (N.S.W. Branch)
+WA,244,Pearce,1.4288347146656661,90613,ALP,Australian Labor Party (Western Australian Branch)
+WA,245,Perth,1.1629056936436686,98689,ALP,Australian Labor Party (Western Australian Branch)
+QLD,175,Petrie,1.5357843643498916,106513,LNP,Liberal National Party of Queensland
+QLD,176,Rankin,1.4320102024549657,87822,ALP,Australian Labor Party (State of Queensland)
+NSW,144,Reid,1.4155026811803615,93429,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,145,Richmond,1.2148949131891562,91924,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,250,Riverina,1.7517478228872807,89683,NP,National Party of Australia - N.S.W.
+NSW,146,Robertson,1.4373138947885205,93697,ALP,Australian Labor Party (N.S.W. Branch)
+QLD,177,Ryan,1.1928274744200182,98710,GRN,Queensland Greens
+VIC,232,Scullin,1.4506446482352544,88653,ALP,Australian Labor Party (Victorian Branch)
+NSW,148,Shortland,1.4230804644738861,97745,ALP,Australian Labor Party (N.S.W. Branch)
+NT,307,Solomon,1.2134497267495286,41354,ALP,Australian Labor Party (Northern Territory) Branch
+SA,325,Spence,1.5267304922477336,106227,ALP,Australian Labor Party (South Australian Branch)
+SA,190,Sturt,1.3882321114567835,110895,LP,Liberal Party of Australia (S.A. Division)
+WA,247,Swan,1.2997282580403344,96047,ALP,Australian Labor Party (Western Australian Branch)
+NSW,149,Sydney,1.0488842502857711,100605,ALP,Australian Labor Party (N.S.W. Branch)
+WA,248,Tangney,1.4012391838478795,102971,ALP,Australian Labor Party (Western Australian Branch)
+VIC,233,Wannon,1.676874739750918,79251,LP,Liberal Party of Australia (Victorian Division)
+NSW,151,Warringah,1.604015378043571,51502,STEGGALL,Independent
+NSW,251,Watson,1.410220817245442,85727,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,152,Wentworth,1.6188958730936915,57113,SPENDER,Independent
+NSW,153,Werriwa,1.605062058411424,100631,ALP,Australian Labor Party (N.S.W. Branch)
+NSW,150,Whitlam,1.4572102764846302,109337,ALP,Australian Labor Party (N.S.W. Branch)
+QLD,178,Wide Bay,1.7217347676942105,85706,LNP,Liberal National Party of Queensland
+VIC,234,Wills,1.019768585749754,85388,ALP,Australian Labor Party (Victorian Branch)
+QLD,316,Wright,1.7977306410655791,105933,LNP,Liberal National Party of Queensland
